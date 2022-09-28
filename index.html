@@ -10,7 +10,7 @@
 
   <body>
     <header>
-      <h1>PlatziMediaPlayer.js</h1>
+      <h1>MediaPlayer.js</h1>
       <p>An extensible media player.</p>
     </header>
 
@@ -19,35 +19,10 @@
         <source src="./assets/BigBuckBunny.mp4" />
       </video>
 
-      <button>Play/Pause</button>
+      <button id="play">Play/Pause</button>
+      <button id="mute">mute/unmute</button>
     </main>
 
-    <script>
-      function MediaPlayer(config) {
-        this.media = config.el;
-      }
-
-      MediaPlayer.prototype.play = function() {
-        this.media.play();
-      };
-
-      MediaPlayer.prototype.pause = function() {
-        this.media.pause();
-      };
-
-      MediaPlayer.prototype.togglePlay = function() {
-        if (this.media.paused) {
-          this.play();
-        } else {
-          this.pause();
-        }
-      };
-
-      const video = document.querySelector('video');
-      const player = new MediaPlayer({ el: video });
-
-      const button = document.querySelector('button');
-      button.onclick = () => player.togglePlay();
-    </script>
+    <script type="module" src="assets/index.js"></script>
   </body>
 </html>
